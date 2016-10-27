@@ -37,5 +37,36 @@ p2=p1;			//非法 p2是const指针不能改变所指地址
 ic=*p3;			//非法 ic是const变量，不能改变值
 ```
 
+## Exercise 2.30
+> 对于下面的这些语句，请说明对象被声明成了顶层const 还是底层const？
 
+```cpp
+const int v2 = 0;           //顶层
+int v1 = v2;                //不是const
+int *p1 = &v1, &r1 = v1;     //p1 不是const, r1不是const
+const int *p2 = &v2, *const p3 = &i, &r2 = v2;      
+//p2 底层const，p3 顶层const，底层const，r2 顶层const 
+```
 
+## Exerci 2.31
+> 假设已有上一个练习中所做的那些声明，则下面的哪些语句是合法的？请说明顶层const 和底层const 在每个例子中有何体现。
+
+```cpp
+r1=v2;      //合法 r1 其实是v1 v2的顶层属性可以不用考虑
+p1=p2;      //非法 const int * 不能转化为int *，p1没有底层const 定义
+p2=p1;      //合法 int * 可以转化为const int * 
+p1=p3;      //非法 const int *，p1没有底层const 定义
+p2=p3;      //合法 二者都有底层const 定义
+```
+
+## Exercise 2.32
+> 下面的代码是否合法？如果非法，请设法将其修改正确
+
+```cpp
+int null =0, *p=null;
+```
+
+非法
+```cpp
+int null = 0, *p = nullptr;
+```
