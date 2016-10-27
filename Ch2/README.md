@@ -70,3 +70,24 @@ int null =0, *p=null;
 ```cpp
 int null = 0, *p = nullptr;
 ```
+
+## Exercise 2.33
+```cpp
+a=42;   //a变为42
+b=42;   //b变为42
+c=42;   //c变为42   
+d=42;   //非法 d: int *        改为 *d=42
+e=42;   //非法 e: const int *   
+g=42;   //非法 g: const int
+```
+
+## Exercise 2.35
+```cpp
+const int i=42;         //const int
+auto j=i;               //int
+const auto &k=i;        //const int &
+auto *p =&i;            //const int *
+const auto j2=i,&k2=i;  //j2:const int，k2: const int &
+```
+
+
