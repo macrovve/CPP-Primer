@@ -19,8 +19,12 @@ int main()
     cout<<endl;
 
     vector<int> v1(10);
-    for(auto i=0;i!=10;++i)
+    for(auto i=0;i!=v1.size();++i)
         v1[i]=i;
+    for(auto i:v1)
+        cout<<i<<" ";
+    cout<<endl;
+
     vector<int> v2(v1);
     for(auto i:v2)
         cout<<i<<" ";
